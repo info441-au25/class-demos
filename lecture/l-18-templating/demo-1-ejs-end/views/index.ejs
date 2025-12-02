@@ -7,5 +7,18 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% if(isLoggedIn) {%>
+      <p>You are logged in. See profile here.</p>
+    <%} else {%>
+      <p>Log in here.</p>
+    <%} %>
+    
+    <h2>Store items</h2>
+    <% storeItems.forEach((item) => { %>
+      <p> 
+        Name: <%= item.name %>,
+        Price:  <%= item.price %>
+      </p>
+    <% }) %>
   </body>
 </html>
